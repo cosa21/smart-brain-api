@@ -14,7 +14,7 @@ const handleImage=(req, res,db) => {
 
 const handleImageApi=(req, res,db) => {
     //FACE_DETECT_MODEL: '53e1df302c079b3db8a0a36033ed2d15'
-    app.models.predict(Clarifai.FACE_DETECT_MODEL, req.body)
+    app.models.predict(/*Clarifai.FACE_DETECT_MODEL*/ '53e1df302c079b3db8a0a36033ed2d15', req.body)
     .then(data=>{
         res.json(data);
     })
