@@ -2,6 +2,10 @@
   "name": "smart-brain-api",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "14.15.0",
+    "npm": "6.14.8"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
