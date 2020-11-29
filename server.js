@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 const db = knex({
     client: 'pg',
     connection: {
-        connectionString: 'postgresql-amorphous-20454',
+        connectionString: process.env.DATABASE_URL,
         ssl:true
     }
 });
