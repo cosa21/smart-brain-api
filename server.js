@@ -5,11 +5,13 @@ const knex = require('knex');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const app = express();
+const { wakeDyno } = require('heroku-keep-awake');
 
 const register = require('./controllers/register');
 const signIn = require('./controllers/signIn');
 const profile=require('./controllers/profile');
 const image=require('./controllers/image');
+const DYNO_URL = 'https://smart-brain011.herokuapp.com/';
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -36,6 +38,7 @@ app.post('/imageurl', (req, res) => image.handleImageApi(req,res));
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`server is running on port ${process.env.PORT}`);
+    wakeDyno(DYNO_URL);
 })
 
 /*
